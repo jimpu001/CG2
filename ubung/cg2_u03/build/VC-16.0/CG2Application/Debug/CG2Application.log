@@ -1,0 +1,29 @@
+﻿cl : 命令行 warning D9035: “Gm”选项已否决，并将在将来的版本中移除
+  vd.cpp
+  image.cpp
+  lights.cpp
+  object.cpp
+  camera.cpp
+  scene.cpp
+  geometry.cpp
+  glfw_backend.cpp
+  util.cpp
+  cg2application.cpp
+  正在生成代码...
+cl : 命令行 warning D9035: “Gm”选项已否决，并将在将来的版本中移除
+  glad.c
+glfw3d.lib(context.obj) : warning LNK4099: 未找到 PDB“glfw.pdb”(使用“glfw3d.lib(context.obj)”或在“C:\Users\jimpu\Desktop\CG2\ubung\cg2_u03\build\VC-16.0\CG2Application\Debug\glfw.pdb”中寻找)；正在链接对象，如同没有调试信息一样
+glfw3d.lib(init.obj) : warning LNK4099: 未找到 PDB“glfw.pdb”(使用“glfw3d.lib(init.obj)”或在“C:\Users\jimpu\Desktop\CG2\ubung\cg2_u03\build\VC-16.0\CG2Application\Debug\glfw.pdb”中寻找)；正在链接对象，如同没有调试信息一样
+glfw3d.lib(input.obj) : warning LNK4099: 未找到 PDB“glfw.pdb”(使用“glfw3d.lib(input.obj)”或在“C:\Users\jimpu\Desktop\CG2\ubung\cg2_u03\build\VC-16.0\CG2Application\Debug\glfw.pdb”中寻找)；正在链接对象，如同没有调试信息一样
+glfw3d.lib(monitor.obj) : warning LNK4099: 未找到 PDB“glfw.pdb”(使用“glfw3d.lib(monitor.obj)”或在“C:\Users\jimpu\Desktop\CG2\ubung\cg2_u03\build\VC-16.0\CG2Application\Debug\glfw.pdb”中寻找)；正在链接对象，如同没有调试信息一样
+glfw3d.lib(vulkan.obj) : warning LNK4099: 未找到 PDB“glfw.pdb”(使用“glfw3d.lib(vulkan.obj)”或在“C:\Users\jimpu\Desktop\CG2\ubung\cg2_u03\build\VC-16.0\CG2Application\Debug\glfw.pdb”中寻找)；正在链接对象，如同没有调试信息一样
+glfw3d.lib(window.obj) : warning LNK4099: 未找到 PDB“glfw.pdb”(使用“glfw3d.lib(window.obj)”或在“C:\Users\jimpu\Desktop\CG2\ubung\cg2_u03\build\VC-16.0\CG2Application\Debug\glfw.pdb”中寻找)；正在链接对象，如同没有调试信息一样
+glfw3d.lib(win32_init.obj) : warning LNK4099: 未找到 PDB“glfw.pdb”(使用“glfw3d.lib(win32_init.obj)”或在“C:\Users\jimpu\Desktop\CG2\ubung\cg2_u03\build\VC-16.0\CG2Application\Debug\glfw.pdb”中寻找)；正在链接对象，如同没有调试信息一样
+glfw3d.lib(win32_joystick.obj) : warning LNK4099: 未找到 PDB“glfw.pdb”(使用“glfw3d.lib(win32_joystick.obj)”或在“C:\Users\jimpu\Desktop\CG2\ubung\cg2_u03\build\VC-16.0\CG2Application\Debug\glfw.pdb”中寻找)；正在链接对象，如同没有调试信息一样
+glfw3d.lib(win32_monitor.obj) : warning LNK4099: 未找到 PDB“glfw.pdb”(使用“glfw3d.lib(win32_monitor.obj)”或在“C:\Users\jimpu\Desktop\CG2\ubung\cg2_u03\build\VC-16.0\CG2Application\Debug\glfw.pdb”中寻找)；正在链接对象，如同没有调试信息一样
+glfw3d.lib(win32_time.obj) : warning LNK4099: 未找到 PDB“glfw.pdb”(使用“glfw3d.lib(win32_time.obj)”或在“C:\Users\jimpu\Desktop\CG2\ubung\cg2_u03\build\VC-16.0\CG2Application\Debug\glfw.pdb”中寻找)；正在链接对象，如同没有调试信息一样
+glfw3d.lib(win32_tls.obj) : warning LNK4099: 未找到 PDB“glfw.pdb”(使用“glfw3d.lib(win32_tls.obj)”或在“C:\Users\jimpu\Desktop\CG2\ubung\cg2_u03\build\VC-16.0\CG2Application\Debug\glfw.pdb”中寻找)；正在链接对象，如同没有调试信息一样
+glfw3d.lib(win32_window.obj) : warning LNK4099: 未找到 PDB“glfw.pdb”(使用“glfw3d.lib(win32_window.obj)”或在“C:\Users\jimpu\Desktop\CG2\ubung\cg2_u03\build\VC-16.0\CG2Application\Debug\glfw.pdb”中寻找)；正在链接对象，如同没有调试信息一样
+glfw3d.lib(wgl_context.obj) : warning LNK4099: 未找到 PDB“glfw.pdb”(使用“glfw3d.lib(wgl_context.obj)”或在“C:\Users\jimpu\Desktop\CG2\ubung\cg2_u03\build\VC-16.0\CG2Application\Debug\glfw.pdb”中寻找)；正在链接对象，如同没有调试信息一样
+glfw3d.lib(egl_context.obj) : warning LNK4099: 未找到 PDB“glfw.pdb”(使用“glfw3d.lib(egl_context.obj)”或在“C:\Users\jimpu\Desktop\CG2\ubung\cg2_u03\build\VC-16.0\CG2Application\Debug\glfw.pdb”中寻找)；正在链接对象，如同没有调试信息一样
+  CG2Application.vcxproj -> C:\Users\jimpu\Desktop\CG2\ubung\cg2_u03\build\VC-16.0\CG2Application\Debug\CG2Application.exe

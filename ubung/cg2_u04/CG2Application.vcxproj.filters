@@ -1,0 +1,64 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <ClCompile Include="cg2application.cpp" />
+    <ClCompile Include="util.cpp" />
+    <ClCompile Include="geometry.cpp" />
+    <ClCompile Include="camera.cpp" />
+    <ClCompile Include="object.cpp" />
+    <ClCompile Include="lights.cpp" />
+    <ClCompile Include="image.cpp" />
+    <ClCompile Include="scene.cpp" />
+    <ClCompile Include="shader_compositor.cpp" />
+    <ClCompile Include="texture.cpp" />
+    <ClCompile Include="glfw_backend.cpp">
+      <Filter>backend</Filter>
+    </ClCompile>
+    <ClCompile Include="glad\src\glad.c">
+      <Filter>backend</Filter>
+    </ClCompile>
+    <ClCompile Include="vd\vd.cpp">
+      <Filter>backend</Filter>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="camera.h" />
+    <ClInclude Include="object.h" />
+    <ClInclude Include="lights.h" />
+    <ClInclude Include="scene.h" />
+    <ClInclude Include="util.h" />
+    <ClInclude Include="gl_utils.h" />
+    <ClInclude Include="image.h" />
+    <ClInclude Include="cg2application.h" />
+    <ClInclude Include="geometry.h" />
+    <ClInclude Include="texture.h" />
+    <ClInclude Include="material.h" />
+    <ClInclude Include="bindings_locations.h" />
+    <ClInclude Include="shader_compositor.h" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="data\shaders\example.fs.glsl"><Filter>shader</Filter></None>
+    <None Include="data\shaders\example.vs.glsl"><Filter>shader</Filter></None>
+    <None Include="data\shaders\base_frg_null.frag"><Filter>shader</Filter></None>
+    <None Include="data\shaders\base_frg_write_color_buffer.frag"><Filter>shader</Filter></None>
+    <None Include="data\shaders\base_vtx_full.vert"><Filter>shader</Filter></None>
+    <None Include="data\shaders\base_vtx_position_only.vert"><Filter>shader</Filter></None>
+    <None Include="data\shaders\frg_albedo_mat_only.frag"><Filter>shader</Filter></None>
+    <None Include="data\shaders\frg_albedo_skybox.frag"><Filter>shader</Filter></None>
+    <None Include="data\shaders\frg_albedo_tex_only.frag"><Filter>shader</Filter></None>
+    <None Include="data\shaders\frg_lighting_none.frag"><Filter>shader</Filter></None>
+    <None Include="data\shaders\frg_lighting_phong.frag"><Filter>shader</Filter></None>
+    <None Include="data\shaders\frg_material_props_mat.frag"><Filter>shader</Filter></None>
+    <None Include="data\shaders\frg_normal_attrib.frag"><Filter>shader</Filter></None>
+    <None Include="data\shaders\vtx_tf_skybox.vert"><Filter>shader</Filter></None>
+    <None Include="data\shaders\vtx_tf_static_full.vert"><Filter>shader</Filter></None>
+  </ItemGroup>
+  <ItemGroup>
+    <Filter Include="backend">
+      <UniqueIdentifier>{b5e10960-a798-4625-a1ec-b9eea6017c72}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="shader">
+      <UniqueIdentifier>{07809b5a-b390-48de-a5e2-4eb9b0f73810}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+</Project>
