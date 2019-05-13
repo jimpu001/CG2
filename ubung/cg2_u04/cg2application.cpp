@@ -118,13 +118,11 @@ void CG2App::init_shader()
 	                                  "data/shaders/frg_lighting_none.frag",
 	                                  "data/shaders/frg_normal_attrib.frag"},true);
 	// 2 (b):
-	// scene.buildShaderProgramm("cmat" ...
-	scene.buildShaderProgramm("cmat", {
-									  "data/shaders/vtx_tf_static_full.vert",
-									  "data/shaders/frg_albedo_tex_only.frag",
-									  "data/shaders/frg_material_props_mat.frag",
-									  "data/shaders/frg_lighting_phong.frag",
-									  "data/shaders/frg_normal_attrib.frag" }, true);
+	scene.buildShaderProgramm("cmat", { "data/shaders/vtx_tf_static_full.vert",
+		"data/shaders/frg_material_props_mat.frag",
+		"data/shaders/frg_lighting_phong.frag",
+		"data/shaders/frg_normal_attrib.frag",
+		"data/shaders/frg_albedo_mat_only.frag" },true);
 }
 
 
@@ -150,16 +148,18 @@ void CG2App::init_sponza_scene()
 
 	// 2 (c):
 	// ...
-	CG2Material* trex_mat = scene.getMaterial("mat_trex");
-	trex_mat->shader = scene.getProgram("cmat");
-	trex_mat->setAlbedo(glm::vec4(1, 0.5, 0, 1.0));
-	scene.getGeometry("geo_trex")->load("data/models/trex.cg2vd ");
-	scene.placeObject("trex", "geo_trex", "mat_trex");
+	CG2Material* Orange_mat =scene.getMaterial("Orange") ;
+	Orange_mat->shader = scene.getProgram("cmat");
+	Orange_mat->setAlbedo(glm::vec4(1, 0.5, 0, 1.0));
+	scene.getGeometry("trex")->load("data/models/trex.cg2vd");
+	scene.placeObject("Orange1", "trex", "Orange");
 
 
 	CG2Material* sky_mat = scene.getMaterial("mat_sky");
+
 	sky_mat->albedo_map = scene.getTexture("tex_sky");
 	sky_mat->shader = scene.getProgram("sky");
+
 
 	img.load("data/textures/tropicalSunnyDay/xp.jpg");
 	sky_mat->albedo_map->setCubeMapSideFrom(img,GL_TEXTURE_CUBE_MAP_POSITIVE_X);
@@ -231,8 +231,11 @@ void CG2App::render_one_frame()
 
 	// 3 (c):
 	glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT);
-	scene.render(BVTX_FULL,BFRG_WRITE_COLORBUFF);
-
+	glDepthFunc(GL_LEQUAL);
+	//scene.render(BVTX_FULL,BFRG_WRITE_COLORBUFF);
+	scene.render(BVTX_POSITION_ONLY, BFRG_NULL);
+	glDepthFunc(GL_EQUAL);
+	scene.render(BVTX_FULL, BFRG_WRITE_COLORBUFF);
 
 }
 
