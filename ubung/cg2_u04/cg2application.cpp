@@ -119,6 +119,12 @@ void CG2App::init_shader()
 	                                  "data/shaders/frg_normal_attrib.frag"},true);
 	// 2 (b):
 	// scene.buildShaderProgramm("cmat" ...
+	scene.buildShaderProgramm("cmat", {
+									  "data/shaders/vtx_tf_static_full.vert",
+									  "data/shaders/frg_albedo_tex_only.frag",
+									  "data/shaders/frg_material_props_mat.frag",
+									  "data/shaders/frg_lighting_phong.frag",
+									  "data/shaders/frg_normal_attrib.frag" }, true);
 }
 
 
@@ -144,14 +150,18 @@ void CG2App::init_sponza_scene()
 
 	// 2 (c):
 	// ...
-
+	scene.getGeometry("geo_trex")->load("data/models/trex.cg2vd ");
+	scene.getTexture("tex_trex")->createFrom(img, 16.0f);
+	CG2Material* trex_mat = scene.getMaterial("mat_trex");
+	trex_mat->albedo_map = scene.getTexture("tex_trex");
+	trex_mat->setAlbedo(glm::vec4(0.2f, 0.3f, 0.5f, 1.0f));
+	trex_mat->shader = scene.getProgram("cmat");
+	scene.placeObject("trex", "geo_trex", "mat_trex");
 
 
 	CG2Material* sky_mat = scene.getMaterial("mat_sky");
-
 	sky_mat->albedo_map = scene.getTexture("tex_sky");
 	sky_mat->shader = scene.getProgram("sky");
-
 
 	img.load("data/textures/tropicalSunnyDay/xp.jpg");
 	sky_mat->albedo_map->setCubeMapSideFrom(img,GL_TEXTURE_CUBE_MAP_POSITIVE_X);

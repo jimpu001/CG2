@@ -11,6 +11,6 @@ vec4 get_albedo()
 {
     // 2 (a):
     // return ...
-    return vec4(1.0);
+    return material.albedo;
 }
 

@@ -7,7 +7,7 @@
 //in vec2 v_texcoord;
 //in vec4 v_color;
 // layout(binding = 2) uniform sampler2D mp_map;
-//layout()binding3<=4
+
 layout(std140,binding = 3) uniform materialDataBlock
 {
     vec4 albedo;

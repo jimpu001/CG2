@@ -47,6 +47,26 @@ layout(std140, binding = 4) uniform globalLightDataBlock
 vec3 one_light(in int light_id, in vec3 N, in vec3 fpos, in vec3 albedo,in vec2 mp)
 {
     // 1 (c)
+	vec3 cam_pos_ws = camera.inv_view[3].xyz;
+	//if(albedo.a < 0.5 ) discard;
+
+	vec3 V = normalize(cam_pos_ws-fpos);
+	//if(!Lenabled(light_id)) continue;
+	vec3 L = Lpos(light_id);
+	if(!Lis_dir(light_id)) L-= fpos;
+
+	float d = length(L);
+	L /= d;
+	vec3 H = normalize(V+L);
+
+	float atten = 1.0/(1+d*d);
+    if(Lis_dir(light_id)) atten = 1.0;
+
+	float NdotL = clamp(dot(N,L),0.0,1.0);
+    vec3 diff = Lcolor(light_id) * NdotL;
+	//¾µÃæ·´Éä todo??
+	vec3 ambi = Lcolor(light_id) * Lambient(light_id);
+	albedo = albedo*(atten*diff+ambi);
     return albedo;
 
 }
