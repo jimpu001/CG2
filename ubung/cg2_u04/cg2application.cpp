@@ -150,12 +150,10 @@ void CG2App::init_sponza_scene()
 
 	// 2 (c):
 	// ...
-	scene.getGeometry("geo_trex")->load("data/models/trex.cg2vd ");
-	scene.getTexture("tex_trex")->createFrom(img, 16.0f);
 	CG2Material* trex_mat = scene.getMaterial("mat_trex");
-	trex_mat->albedo_map = scene.getTexture("tex_trex");
-	trex_mat->setAlbedo(glm::vec4(0.2f, 0.3f, 0.5f, 1.0f));
 	trex_mat->shader = scene.getProgram("cmat");
+	trex_mat->setAlbedo(glm::vec4(1, 0.5, 0, 1.0));
+	scene.getGeometry("geo_trex")->load("data/models/trex.cg2vd ");
 	scene.placeObject("trex", "geo_trex", "mat_trex");
 
 

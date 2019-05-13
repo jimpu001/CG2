@@ -56,16 +56,15 @@ void transfrom_varyings()
     // 1 (a) Transform all the in their appropriate spaces.
     v_position_os = position_os;
     v_position_ws = (object.model*vec4(position_os,1.0)).xyz;
-    v_nrm_ws = (object.normal_matrix*vec4(normal_os,0.0)).xyz;
+    v_nrm_ws = (object.normal_matrix*vec4(normal_os,1.0)).xyz;
     v_texcoord = texcoord;
-    v_color = vec4(1.0f);
+    v_color = color;
 }
 
 vec4 transfrom_position_cs()
 {
     // 1 (a) Return the position in Clip Space
     // return ...
-	vec4 p = camera.projection*camera.view*object.model * vec4(position_os,1.0);
-    return p;
+    return vec4(camera.projection*camera.view*object.model * vec4(position_os,1.0));
 
 }
