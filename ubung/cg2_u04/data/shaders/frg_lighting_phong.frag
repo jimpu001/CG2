@@ -48,6 +48,8 @@ vec3 one_light(in int light_id, in vec3 N, in vec3 fpos, in vec3 albedo,in vec2 
 {
     // 1 (c)
 	vec3 cam_pos_ws = camera.inv_view[3].xyz;
+	vec3 light_color = vec3(0.0,0.0,0.0);
+	vec3 light_color_spec = vec3(0.0,0.0,0.0);
 	//if(albedo.a < 0.5 ) discard;
 
 	vec3 V = normalize(cam_pos_ws-fpos);
@@ -63,14 +65,23 @@ vec3 one_light(in int light_id, in vec3 N, in vec3 fpos, in vec3 albedo,in vec2 
     if(Lis_dir(light_id)) atten = 1.0;
 
 	float NdotL = clamp(dot(N,L),0.0,1.0);
+	//漫反射
     vec3 diff = Lcolor(light_id) * NdotL;
-	//镜面反射 todo??
+	//镜面反射
+	vec3 spec = vec3 (0);
+		if(NdotL > 0.0){
+			spec = Lcolor(light_id) * clamp(pow(dot(N,H),8.0),0,1)*0.2;
+		}
+	//环境光
 	vec3 ambi = Lcolor(light_id) * Lambient(light_id);
-	albedo = albedo*(atten*diff+ambi);
-    return albedo;
+	//混合
+	light_color = atten*diff+ambi;
+	light_color_spec = atten*spec;
+	//fclr.rgb= albedo*light_color+light_color_spec;
+	//fclr.a = 1.0;
+	return albedo*light_color+light_color_spec;
 
 }
-
 
 vec3 lighting(in vec3 albedo, in vec4 material_props, in vec3 normal)
 {

@@ -118,11 +118,12 @@ void CG2App::init_shader()
 	                                  "data/shaders/frg_lighting_none.frag",
 	                                  "data/shaders/frg_normal_attrib.frag"},true);
 	// 2 (b):
-	scene.buildShaderProgramm("cmat", { "data/shaders/vtx_tf_static_full.vert",
-		"data/shaders/frg_material_props_mat.frag",
-		"data/shaders/frg_lighting_phong.frag",
-		"data/shaders/frg_normal_attrib.frag",
-		"data/shaders/frg_albedo_mat_only.frag" },true);
+	scene.buildShaderProgramm("cmat", { 
+										"data/shaders/vtx_tf_static_full.vert",
+										"data/shaders/frg_material_props_mat.frag",
+										"data/shaders/frg_lighting_phong.frag",
+										"data/shaders/frg_normal_attrib.frag",
+										"data/shaders/frg_albedo_mat_only.frag" },true);
 }
 
 
@@ -231,10 +232,10 @@ void CG2App::render_one_frame()
 
 	// 3 (c):
 	glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT);
-	glDepthFunc(GL_LEQUAL);
+//glDepthFunc(GL_LEQUAL);
 	//scene.render(BVTX_FULL,BFRG_WRITE_COLORBUFF);
-	scene.render(BVTX_POSITION_ONLY, BFRG_NULL);
-	glDepthFunc(GL_EQUAL);
+//	scene.render(BVTX_POSITION_ONLY, BFRG_NULL);
+//	glDepthFunc(GL_EQUAL);
 	scene.render(BVTX_FULL, BFRG_WRITE_COLORBUFF);
 
 }
