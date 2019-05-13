@@ -1,0 +1,39 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <ClCompile Include="cg2application.cpp" />
+    <ClCompile Include="util.cpp" />
+    <ClCompile Include="geometry.cpp" />
+    <ClCompile Include="glad\src\glad.c">
+      <Filter>backend</Filter>
+    </ClCompile>
+    <ClCompile Include="glfw_backend.cpp">
+      <Filter>backend</Filter>
+    </ClCompile>
+    <ClCompile Include="vd\vd.cpp">
+      <Filter>backend</Filter>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="util.h" />
+    <ClInclude Include="gl_utils.h" />
+    <ClInclude Include="cg2application.h" />
+    <ClInclude Include="geometry.h" />
+  </ItemGroup>
+  <ItemGroup>
+    <Filter Include="shader">
+      <UniqueIdentifier>{0a93473e-62d8-4454-8fb9-23d81e3f6b78}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="backend">
+      <UniqueIdentifier>{75f4771c-53bd-4b2b-83fe-a5819a83152a}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="data\shaders\example.fs.glsl">
+      <Filter>shader</Filter>
+    </None>
+    <None Include="data\shaders\example.vs.glsl">
+      <Filter>shader</Filter>
+    </None>
+  </ItemGroup>
+</Project>

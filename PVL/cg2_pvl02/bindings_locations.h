@@ -1,0 +1,15 @@
+#ifndef BINDINGS_LOCATIONS_H
+#define BINDINGS_LOCATIONS_H
+
+// the binding points we are use for the UBOs
+enum CG2UBOBindings {
+	CG2_UBO_CAMERA_DATA = 1,
+	CG2_UBO_OBJECT_DATA = 2,
+	CG2_UBO_MATERIAL_DATA = 3,
+	CG2_UBO_GLOBAL_LIGHT_DATA = 4
+};
+
+
+
+
+#endif // BINDINGS_LOCATIONS_H
